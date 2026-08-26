@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jatinder Kumar — AI Engineer</title>
+<meta name="description" content="Jatinder Kumar — AI engineer building machine learning, computer vision, and LLM-powered systems.">
+<meta property="og:title" content="Jatinder Kumar — AI Engineer">
+<meta property="og:description" content="Machine learning, computer vision, and LLM-powered systems — portfolio and inquiries.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0F1220">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230F1220'/%3E%3Ctext x='50' y='68' font-size='58' font-family='monospace' fill='%236EE7D8' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* =====================================================
+     HOW TO EDIT THIS FILE
+     - Search for "EDIT:" comments — those mark every spot
+       meant for your own text (name, bio, projects, links).
+     - Project cards are in the PROJECTS section. Duplicate
+       one <article class="project-card"> block to add more.
+     - The contact form uses FormSubmit.co with your email already
+       wired in — it works as soon as you host this page. The first
+       submission triggers a one-time confirmation email from
+       FormSubmit; click it to activate the form for good.
+     ===================================================== */
+
+  :root{
+    --void:#0F1220;
+    --panel:#171B2E;
+    --panel-raised:#1D2238;
+    --line: rgba(237,239,247,0.10);
+    --line-strong: rgba(237,239,247,0.18);
+    --bright:#EDEFF7;
+    --mist:#8890A6;
+    --mist-dim:#5D6478;
+    --signal:#6EE7D8;
+    --signal-dim: rgba(110,231,216,0.12);
+    --ember:#FFA86B;
+    --ember-dim: rgba(255,168,107,0.14);
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--void);
+    color:var(--bright);
+    font-family:var(--font-body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+  section{ padding:6rem 0; }
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 2rem; }
+  @media (max-width:640px){ section{ padding:4rem 0; } .wrap{ padding:0 1.25rem; } }
+
+  h1,h2,h3{ font-family:var(--font-display); font-weight:600; margin:0; letter-spacing:-0.01em; }
+  .eyebrow{
+    font-family:var(--font-mono); font-size:0.78rem; letter-spacing:0.12em;
+    text-transform:uppercase; color:var(--signal); margin:0 0 0.9rem;
+    display:flex; align-items:center; gap:0.6rem;
+  }
+  .eyebrow::before{ content:''; width:18px; height:1px; background:var(--signal); display:inline-block; }
+
+  /* ---- nav ---- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(15,18,32,0.86); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{ display:flex; align-items:center; justify-content:space-between; padding:1.1rem 2rem; }
+  .logo{ font-family:var(--font-mono); font-weight:500; font-size:0.95rem; color:var(--bright); }
+  .logo span{ color:var(--signal); }
+  .nav-links{ display:flex; gap:2rem; font-size:0.9rem; color:var(--mist); }
+  .nav-links a:hover{ color:var(--bright); }
+  .nav-cta{
+    font-family:var(--font-mono); font-size:0.82rem; padding:0.5rem 1rem;
+    border:1px solid var(--line-strong); border-radius:4px; color:var(--bright);
+    transition:border-color .2s, color .2s;
+  }
+  .nav-cta:hover{ border-color:var(--signal); color:var(--signal); }
+  .nav-toggle{ display:none; }
+  @media (max-width:760px){
+    .nav-links{ display:none; }
+    .nav-toggle{ display:block; }
+  }
+
+  /* ---- hero ---- */
+  .hero{ padding:5.5rem 0 4rem; }
+  .hero-grid{ display:grid; grid-template-columns:1.15fr 0.85fr; gap:3.5rem; align-items:center; }
+  @media (max-width:900px){ .hero-grid{ grid-template-columns:1fr; } }
+  .hero h1{ font-size:clamp(2.4rem, 5vw, 3.6rem); line-height:1.06; margin-bottom:1.1rem; }
+  .hero h1 .accent{ color:var(--signal); }
+  .hero p.lede{ color:var(--mist); font-size:1.08rem; max-width:46ch; margin:0 0 2rem; }
+  .hero-actions{ display:flex; gap:0.9rem; flex-wrap:wrap; }
+  .btn{
+    font-family:var(--font-mono); font-size:0.85rem; padding:0.85rem 1.4rem;
+    border-radius:4px; border:1px solid transparent; cursor:pointer; display:inline-flex; align-items:center; gap:0.5rem;
+    transition:transform .15s ease, border-color .2s, background .2s;
+  }
+  .btn:active{ transform:scale(0.98); }
+  .btn-primary{ background:var(--signal); color:#052B26; font-weight:500; }
+  .btn-primary:hover{ background:#8AF0E3; }
+  .btn-ghost{ border-color:var(--line-strong); color:var(--bright); }
+  .btn-ghost:hover{ border-color:var(--signal); color:var(--signal); }
+
+  /* terminal panel */
+  .terminal{
+    background:var(--panel); border:1px solid var(--line); border-radius:10px;
+    overflow:hidden; box-shadow:0 30px 60px -30px rgba(0,0,0,0.6);
+  }
+  .terminal-bar{
+    display:flex; align-items:center; gap:0.4rem; padding:0.7rem 1rem;
+    border-bottom:1px solid var(--line); background:var(--panel-raised);
+  }
+  .dot{ width:9px; height:9px; border-radius:50%; background:var(--mist-dim); }
+  .terminal-title{ margin-left:0.5rem; font-family:var(--font-mono); font-size:0.75rem; color:var(--mist); }
+  .terminal-body{ padding:1.3rem 1.4rem; font-family:var(--font-mono); font-size:0.85rem; min-height:220px; }
+  .terminal-body .line{ margin-bottom:0.55rem; color:var(--mist); }
+  .terminal-body .prompt{ color:var(--signal); }
+  .terminal-body .out{ color:var(--bright); }
+  .cursor{ display:inline-block; width:7px; height:1em; background:var(--signal); vertical-align:text-bottom; animation:blink 1s steps(1) infinite; }
+  @keyframes blink{ 50%{ opacity:0; } }
+
+  /* ---- section headers ---- */
+  .section-head{ margin-bottom:2.75rem; max-width:56ch; }
+  .section-head h2{ font-size:clamp(1.6rem,3vw,2.1rem); }
+  .section-head p{ color:var(--mist); margin-top:0.7rem; }
+
+  /* ---- about ---- */
+  .about-grid{ display:grid; grid-template-columns:1fr 1fr; gap:3rem; }
+  @media (max-width:800px){ .about-grid{ grid-template-columns:1fr; } }
+  .about-text p{ color:var(--mist); margin:0 0 1rem; }
+  .stat-list{ display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+  .stat{ background:var(--panel); padding:1.4rem 1.5rem; }
+  .stat .num{ font-family:var(--font-display); font-size:1.7rem; color:var(--signal); }
+  .stat .label{ font-size:0.82rem; color:var(--mist); margin-top:0.3rem; }
+
+  /* ---- skills ---- */
+  .skills-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:1.5rem; }
+  .skill-card{ background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:1.4rem 1.5rem; }
+  .skill-card h3{ font-size:1rem; margin-bottom:0.9rem; display:flex; align-items:center; gap:0.5rem; }
+  .skill-card h3::before{ content:''; width:6px; height:6px; border-radius:50%; background:var(--ember); display:inline-block; }
+  .pill-row{ display:flex; flex-wrap:wrap; gap:0.5rem; }
+  .pill{ font-family:var(--font-mono); font-size:0.76rem; padding:0.35rem 0.7rem; border-radius:4px; background:var(--void); border:1px solid var(--line); color:var(--mist); }
+  button.pill{ cursor:pointer; transition:border-color .2s, color .2s, background .2s; }
+  button.pill:hover{ border-color:var(--signal); color:var(--signal); }
+  button.pill.active{ background:var(--signal-dim); border-color:var(--signal); color:var(--signal); }
+  .filter-bar{ display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:2rem; }
+  .filter-bar .pill{ padding:0.5rem 1rem; font-size:0.78rem; }
+
+  /* ---- projects ---- */
+  .project-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(310px,1fr)); gap:1.5rem; }
+  .project-card{
+    background:var(--panel); border:1px solid var(--line); border-radius:10px;
+    padding:1.7rem; display:flex; flex-direction:column; transition:border-color .2s, transform .2s;
+  }
+  .project-card:hover{ border-color:var(--line-strong); transform:translateY(-3px); }
+  .project-tag{ font-family:var(--font-mono); font-size:0.72rem; color:var(--ember); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.7rem; }
+  .project-card h3{ font-size:1.15rem; margin-bottom:0.6rem; }
+  .project-card p{ color:var(--mist); font-size:0.92rem; margin:0 0 1.1rem; flex-grow:1; }
+  .project-stack{ display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:1.2rem; }
+  .project-links{ display:flex; gap:1.2rem; font-family:var(--font-mono); font-size:0.8rem; border-top:1px solid var(--line); padding-top:1rem; }
+  .project-links a{ color:var(--signal); display:flex; align-items:center; gap:0.35rem; }
+  .project-links a:hover{ text-decoration:underline; }
+  .project-card.placeholder{ border-style:dashed; border-color:var(--line-strong); }
+  .project-card.placeholder p{ color:var(--mist-dim); }
+
+  /* ---- experience/education timeline ---- */
+  .timeline{ border-left:1px solid var(--line); margin-left:0.4rem; }
+  .tl-item{ position:relative; padding:0 0 2.4rem 2.2rem; }
+  .tl-item:last-child{ padding-bottom:0; }
+  .tl-item::before{
+    content:''; position:absolute; left:-5px; top:0.3rem; width:9px; height:9px;
+    border-radius:50%; background:var(--void); border:2px solid var(--signal);
+  }
+  .tl-period{ font-family:var(--font-mono); font-size:0.78rem; color:var(--mist); margin-bottom:0.3rem; }
+  .tl-item h3{ font-size:1.05rem; margin-bottom:0.3rem; }
+  .tl-org{ color:var(--ember); font-size:0.88rem; margin-bottom:0.5rem; }
+  .tl-item p{ color:var(--mist); font-size:0.92rem; margin:0; }
+
+  /* ---- contact ---- */
+  .contact-grid{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:3rem; }
+  @media (max-width:800px){ .contact-grid{ grid-template-columns:1fr; } }
+  .contact-list{ list-style:none; margin:1.5rem 0 0; padding:0; display:flex; flex-direction:column; gap:0.9rem; }
+  .contact-list a{ font-family:var(--font-mono); font-size:0.9rem; color:var(--bright); display:flex; align-items:center; gap:0.6rem; }
+  .contact-list a:hover{ color:var(--signal); }
+  .contact-list .k{ color:var(--mist); min-width:76px; display:inline-block; }
+
+  form.inquiry{ display:flex; flex-direction:column; gap:1rem; }
+  .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+  @media (max-width:560px){ .form-row{ grid-template-columns:1fr; } }
+  label{ font-family:var(--font-mono); font-size:0.76rem; color:var(--mist); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:0.4rem; }
+  input, select, textarea{
+    width:100%; background:var(--panel); border:1px solid var(--line); border-radius:6px;
+    color:var(--bright); font-family:var(--font-body); font-size:0.92rem; padding:0.75rem 0.9rem;
+  }
+  input:focus, select:focus, textarea:focus{ outline:none; border-color:var(--signal); }
+  textarea{ resize:vertical; min-height:110px; }
+  .form-note{ font-size:0.78rem; color:var(--mist-dim); }
+  .form-status{ font-family:var(--font-mono); font-size:0.85rem; min-height:1.2em; }
+  .form-status.ok{ color:var(--signal); }
+  .form-status.err{ color:#F09595; }
+
+  footer{ border-top:1px solid var(--line); padding:2.5rem 0; }
+  .footer-row{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; }
+  .footer-row p{ color:var(--mist-dim); font-size:0.85rem; margin:0; }
+  .footer-links{ display:flex; gap:1.4rem; font-size:0.85rem; color:var(--mist); }
+  .footer-links a:hover{ color:var(--signal); }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .cursor{ animation:none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="logo">ai<span>_</span>engineer<span>.</span>portfolio</div>
+    <!-- EDIT: point these anchors at your section ids, add/remove as needed -->
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="#contact">Hire me →</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Available for freelance & full-time roles</p>
+        <!-- EDIT: your name and one-line role/positioning -->
+        <h1>Hi, I'm <span class="accent">Jatinder Kumar</span>.<br>I build practical AI systems.</h1>
+        <!-- EDIT: 2–3 sentence summary. Mention your background, what you build, and what kind of work you want. -->
+        <p class="lede">Recent graduate turned AI engineer, with hands-on industry experience building machine learning pipelines and LLM-powered applications. I turn messy data and open-ended problems into shipped, reliable systems.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">View projects</a>
+          <a class="btn btn-ghost" href="#contact">Start an inquiry</a>
+          <!-- EDIT: link this to your resume PDF once you add it to the same folder -->
+          <a class="btn btn-ghost" href="resume.pdf">Download resume</a>
+        </div>
+      </div>
+
+      <div class="terminal" aria-hidden="true">
+        <div class="terminal-bar">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="terminal-title">status.log</span>
+        </div>
+        <div class="terminal-body" id="termBody"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about">
+    <div class="wrap about-grid">
+      <div class="about-text">
+        <p class="eyebrow">About</p>
+        <h2 style="margin-bottom:1.2rem;">Background</h2>
+        <p>I hold a B.Sc (Hons) in Artificial Intelligence & Data Science from Sri Guru Tegh Bahadur Khalsa College, Anandpur Sahib, and I'm currently an AI/ML intern at 9i Technologies, Chandigarh.</p>
+        <p>There I've gone beyond theory — building and training classification and prediction models on real datasets, designing neural networks (ANN, CNN) for image tasks, and shipping ML features behind FastAPI endpoints, including a house price prediction model and a GenAI code assistant built with LangChain and LLM APIs.</p>
+        <p>I'm looking for opportunities — freelance inquiries, contract work, or full-time roles — where I can own a problem end to end.</p>
+      </div>
+      <div class="stat-list">
+        <div class="stat"><div class="num">3</div><div class="label">Projects shipped</div></div>
+        <div class="stat"><div class="num">22+</div><div class="label">Months industry experience</div></div>
+        <div class="stat"><div class="num">7.09</div><div class="label">College CGPA / 10</div></div>
+        <div class="stat"><div class="num">00</div><div class="label">Client inquiries answered</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Skills</p>
+        <h2>What I work with</h2>
+        <p>Grouped by area — edit freely to match your actual stack.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Machine learning</h3>
+          <div class="pill-row">
+            <button class="pill skill-btn" data-filter="ml">Python</button><button class="pill skill-btn" data-filter="ml">TensorFlow</button><button class="pill skill-btn" data-filter="ml">Keras</button><button class="pill skill-btn" data-filter="ml">PyTorch</button><button class="pill skill-btn" data-filter="ml">Scikit-learn</button><button class="pill skill-btn" data-filter="ml">Pandas</button><button class="pill skill-btn" data-filter="ml">NumPy</button>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3>LLMs & GenAI</h3>
+          <div class="pill-row">
+            <button class="pill skill-btn" data-filter="genai">LangChain</button><button class="pill skill-btn" data-filter="genai">LLM APIs</button><button class="pill skill-btn" data-filter="genai">Generative AI</button><button class="pill skill-btn" data-filter="genai">Prompt engineering</button>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3>Engineering & deployment</h3>
+          <div class="pill-row">
+            <button class="pill skill-btn" data-filter="eng">FastAPI</button><button class="pill skill-btn" data-filter="eng">REST APIs</button><button class="pill skill-btn" data-filter="eng">Model deployment</button><button class="pill skill-btn" data-filter="eng">Git</button><button class="pill skill-btn" data-filter="eng">Debugging</button>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3>Data & vision</h3>
+          <div class="pill-row">
+            <button class="pill skill-btn" data-filter="cv">Computer vision</button><button class="pill skill-btn" data-filter="cv">NLP</button><button class="pill skill-btn" data-filter="ml">Feature engineering</button><button class="pill skill-btn" data-filter="ml">Data analysis</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Projects</p>
+        <h2>Selected work</h2>
+        <p>Replace these with your real projects — duplicate a card block for each new one.</p>
+      </div>
+      <div class="filter-bar" id="filterBar">
+        <button class="pill filter-btn active" data-filter="all">All</button>
+        <button class="pill filter-btn" data-filter="genai">LLM / GenAI</button>
+        <button class="pill filter-btn" data-filter="cv">Computer vision</button>
+        <button class="pill filter-btn" data-filter="ml">ML pipeline</button>
+      </div>
+
+      <div class="project-grid" id="projectGrid">
+
+        <article class="project-card" data-tags="genai ml">
+          <div class="project-tag">Multi-agent AI</div>
+          <h3>Multi-agent AI research system</h3>
+          <p>Built a multi-agent system with dedicated planner, executor, and evaluator agents to study coordination, communication, and task distribution — using LLMs for reasoning and planning across the pipeline.</p>
+          <div class="project-stack">
+            <span class="pill">LangChain</span><span class="pill">LLM APIs</span><span class="pill">Python</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/gorug4732-stack?tab=repositories" target="_blank" rel="noopener">↗ Code</a>
+          </div>
+        </article>
+
+        <article class="project-card" data-tags="cv ml">
+          <div class="project-tag">Computer vision</div>
+          <h3>Rice variety classification with CNN</h3>
+          <p>Trained a CNN on preprocessed rice grain image datasets to classify variety with high accuracy, wrapped in a Streamlit UI with API endpoints for real-time image upload and prediction.</p>
+          <div class="project-stack">
+            <span class="pill">CNN</span><span class="pill">TensorFlow</span><span class="pill">Streamlit</span><span class="pill">FastAPI</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/gorug4732-stack?tab=repositories" target="_blank" rel="noopener">↗ Code</a>
+          </div>
+        </article>
+
+        <article class="project-card" data-tags="ml">
+          <div class="project-tag">ML pipeline</div>
+          <h3>Car price prediction API</h3>
+          <p>FastAPI-based ML service predicting car selling prices with a Random Forest regression model — one-hot encoded features, Pydantic request validation, and auto-generated Swagger docs for real-time inference.</p>
+          <div class="project-stack">
+            <span class="pill">FastAPI</span><span class="pill">Scikit-learn</span><span class="pill">Pydantic</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/gorug4732-stack?tab=repositories" target="_blank" rel="noopener">↗ Code</a>
+          </div>
+        </article>
+
+        <!-- Placeholder slot — delete once you have a 4th real project -->
+        <article class="project-card placeholder" data-tags="all">
+          <div class="project-tag">Next up</div>
+          <h3>Add your next project</h3>
+          <p>Keep this slot as a reminder — recruiters and clients notice a portfolio that keeps growing.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE ================= -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Experience & education</p>
+        <h2>Timeline</h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-period">Oct 2024 — Present</div>
+          <h3>AI/ML intern</h3>
+          <div class="tl-org">9i Technologies, Chandigarh</div>
+          <p>Built and trained classification/prediction models on real-world datasets, designed ANN/CNN neural networks for image classification, and shipped a house price prediction model and a GenAI code assistant using LangChain and LLM APIs.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-period">July 2022 — July 2025</div>
+          <h3>B.Sc (Hons), Artificial Intelligence & Data Science</h3>
+          <div class="tl-org">Sri Guru Tegh Bahadur Khalsa College, Anandpur Sahib</div>
+          <p>CGPA: 7.09</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-period">March 2022</div>
+          <h3>+2 (Non-Medical)</h3>
+          <div class="tl-org">GSSS, Nurpur Bedi</div>
+          <p>Percentage: 79.6%</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>Let's work together</h2>
+        <p style="color:var(--mist); margin-top:0.8rem;">Open to freelance inquiries, contract projects, and full-time AI engineering roles.</p>
+        <ul class="contact-list">
+          <!-- EDIT: replace every placeholder value below -->
+          <li><a href="mailto:jatinder557721@gmail.com"><span class="k">Email</span> jatinder557721@gmail.com</a></li>
+          <li><a href="tel:+918968148375"><span class="k">Phone</span> +91 89681 48375</a></li>
+          <li><a href="https://www.linkedin.com/in/jatinder-kumar-803020346" target="_blank" rel="noopener"><span class="k">LinkedIn</span> /in/jatinder-kumar</a></li>
+          <li><a href="https://github.com/gorug4732-stack" target="_blank" rel="noopener"><span class="k">GitHub</span> /gorug4732-stack</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <!--
+          This form uses FormSubmit.co with your email address below,
+          so it works immediately — no signup needed. The first time
+          someone submits it, FormSubmit sends you a one-time
+          confirmation email; click the link in it to activate the
+          form permanently. After that, every inquiry lands straight
+          in your inbox.
+        -->
+        <form class="inquiry" id="inquiryForm" action="https://formsubmit.co/ajax/jatinder557721@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New portfolio inquiry">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="form-row">
+            <div>
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Jordan Lee" required>
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="jordan@company.com" required>
+            </div>
+          </div>
+          <div>
+            <label for="type">Inquiry type</label>
+            <select id="type" name="type">
+              <option>Job opportunity</option>
+              <option>Freelance / contract project</option>
+              <option>Collaboration</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="message">What are you looking for?</label>
+            <textarea id="message" name="message" placeholder="Tell me about the role or project, timeline, and budget if relevant." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Send inquiry</button>
+          <p class="form-status" id="formStatus"></p>
+          <p class="form-note">Submissions go straight to my inbox — I reply within a couple of days.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <!-- EDIT: your name -->
+    <p>© <span id="year"></span> Jatinder Kumar. Built with care.</p>
+    <div class="footer-links">
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="resume.pdf">Resume</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Hero terminal — simple typed status log, purely decorative.
+  var lines = [
+    "$ engineer --status",
+    "loading profile.......... done",
+    "role: AI Engineer",
+    "focus: ML pipelines, LLM apps",
+    "$ engineer --availability",
+    "open_to: freelance, full-time",
+    "response_time: < 48h"
+  ];
+  var body = document.getElementById('termBody');
+  var li = 0, ci = 0;
+
+  function typeNext(){
+    if(li >= lines.length){
+      var cur = document.createElement('span');
+      cur.className = 'cursor';
+      body.appendChild(cur);
+      return;
+    }
+    var text = lines[li];
+    var isCmd = text.indexOf('$') === 0;
+    if(ci === 0){
+      var lineEl = document.createElement('div');
+      lineEl.className = 'line';
+      var span = document.createElement('span');
+      span.className = isCmd ? 'prompt' : 'out';
+      lineEl.appendChild(span);
+      body.appendChild(lineEl);
+    }
+    var currentLine = body.lastChild.querySelector('span');
+    if(ci < text.length){
+      currentLine.textContent += text.charAt(ci);
+      ci++;
+      setTimeout(typeNext, isCmd ? 28 : 14);
+    } else {
+      li++; ci = 0;
+      setTimeout(typeNext, 260);
+    }
+  }
+  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    typeNext();
+  } else {
+    lines.forEach(function(text){
+      var lineEl = document.createElement('div');
+      lineEl.className = 'line';
+      var span = document.createElement('span');
+      span.className = text.indexOf('$') === 0 ? 'prompt' : 'out';
+      span.textContent = text;
+      lineEl.appendChild(span);
+      body.appendChild(lineEl);
+    });
+  }
+
+  // Project filter bar — click a tag (or a skill pill) to show only matching projects.
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var skillBtns = document.querySelectorAll('.skill-btn');
+  var cards = document.querySelectorAll('.project-card');
+
+  function applyFilter(tag){
+    filterBtns.forEach(function(b){ b.classList.toggle('active', b.dataset.filter === tag); });
+    cards.forEach(function(card){
+      var tags = (card.dataset.tags || '').split(' ');
+      card.style.display = (tag === 'all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+    });
+  }
+
+  filterBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){ applyFilter(btn.dataset.filter); });
+  });
+
+  skillBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      skillBtns.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      applyFilter(btn.dataset.filter);
+      document.getElementById('projects').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // Inquiry form — async submit to FormSubmit.co with inline status, no page reload.
+  var form = document.getElementById('inquiryForm');
+  var status = document.getElementById('formStatus');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!form.checkValidity()){
+      status.textContent = 'Please fill in all required fields.';
+      status.className = 'form-status err';
+      return;
+    }
+    status.textContent = 'Sending…';
+    status.className = 'form-status';
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res){
+      if(res.ok){
+        status.textContent = 'Message sent — thanks, I\'ll reply soon.';
+        status.className = 'form-status ok';
+        form.reset();
+      } else {
+        status.textContent = 'Something went wrong. Try emailing me directly.';
+        status.className = 'form-status err';
+      }
+    }).catch(function(){
+      status.textContent = 'Something went wrong. Try emailing me directly.';
+      status.className = 'form-status err';
+    });
+  });
+</script>
+
+</body>
+</html>
